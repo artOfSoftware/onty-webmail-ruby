@@ -1,0 +1,38 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+# column: value
+
+inbox:
+  id: 0
+  account_id: 0
+  name: Inbox
+  folder_type: 1
+
+sent:
+  id: 1
+  account_id: 0
+  name: Sent
+  folder_type: 2
+
+archived:
+  id: 2
+  account_id: 0
+  name: Archived
+  folder_type: 3
+
+james_custom:
+  id: 3
+  account_id: 0
+  name: Custom Folder for User One
+  folder_type: 0
+
+suzanna_custom:
+  id: 4
+  account_id: 1
+  name: Custom Folder for User Two
+  folder_type: 0
+

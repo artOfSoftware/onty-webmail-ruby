@@ -1,0 +1,46 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+
+
+james_one:
+  id: 0
+  account_id: 0
+  folder_id: 1
+  from_id: 0
+  to_id: 1
+  subject: "Subject First"
+  text: "Text of the first message. Thank you kindly."
+  status: 1
+
+james_two:
+  id: 1
+  account_id: 0
+  folder_id: 1
+  from_id: 1
+  to_id: 0
+  subject: "Re: Subject First"
+  text: "Thank you for being so kind. Best regards."
+  status: 0
+
+james_three:
+  id: 2
+  account_id: 0
+  folder_id: 3
+  from_id: 0
+  to_id: 1
+  subject: "Message in Custom Folder"
+  text: "Greetings there, oh friendly sire."
+  status: 1
+
+suzanna_one:
+  id: 3
+  account_id: 1
+  folder_id: 4
+  from_id: 1
+  to_id: 0
+  subject: "Subject First"
+  text: "Text of the first message. Thank you kindly."
+  status: 1

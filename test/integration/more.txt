@@ -1,0 +1,88 @@
+#  setup do
+#    # make it look like we have logged in
+#    #session[:user] = accounts( :james ).id
+#    #assert_equal accounts( :james ).id, session[:user]
+#  end
+
+
+#  test "integration 01 a" do
+#  end
+
+#    james = login( :james )
+#    
+#    james.browse_site
+    
+#
+#    
+#    
+#    
+#    #make sure we are logged in
+#    assert_not_nil session[:user], "not logged in before test"
+#
+#    folder = folders( 'james_custom' )
+#    account = accounts( 'james' )
+#
+#    nrFolders = Folder.where( :account_id => account.id ).count
+#    
+#    assert_equal account.id, folder.account_id, "bad test setup: this is supposed to be our user's folder"
+#    
+#    get :editfolder, :id=>folder.id
+#
+#    assert_response :success
+#    assert_template 'editfolder'
+#
+#    folderNameNew = folder.name << " renamed"
+#
+#    patch :editfolder, :id=>folder.id, folder: { :name=>folderNameNew }
+#    #TEST: authenticity token?
+#
+#    assert_response :redirect
+#    assert_redirected_to :action=>'folder'
+#
+#    #get 'folders'
+#
+#    #puts @response.body
+#    
+#    
+#    #assert_match 'Folder saved successfully', flash[:message]
+#    #assert_match "View Mailbox: Folder <b>#{folderNameNew}", @response.body
+#
+#    # make sure nr of folders stayed the same
+#    nrFoldersAfter = Folder.where( :account_id => account.id ).count
+#    assert_equal nrFolders, nrFoldersAfter, "Number of folders was supposed to stay the same. Was #{nrFolders} and became #{nrFoldersAfter}"
+#
+#    # make sure folder has new name in DB
+#    folderAgain = Folder.find( folder.id )
+#    assert_equal folderNameNew, folderAgain.name
+    
+
+
+  
+#private
+   
+#  module CustomDsl
+#
+#    def browse_site
+#      get "/mailboxes"
+#      assert_response :success
+#      get "/mailboxes/1/folder"
+#      assert assigns(:messages)
+#    end
+#
+#    def home
+#      sess.get "/"
+#      assert_response :success
+#    end
+#    
+#  end
+
+#  def login(user)
+#    open_session do |sess|
+#      sess.extend(CustomDsl)
+#      u = users(user)
+#      sess.https!
+#      sess.post "/accounts/login", username: u.name, password: u.name
+#      assert_equal '/accounts/home', sess.path
+#      sess.https!(false)
+#    end
+#  end
