@@ -1,0 +1,205 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body
+{
+	background-color: #bee0be;
+}
+
+.notice
+{
+	background-color: lightblue;
+	font-style: italic;
+}
+
+.error
+{
+	background-color: orange;
+	font-style: italic;
+}
+
+.debug
+{
+	background-color: grey;
+	font-style: italic;
+}
+
+
+div.app
+{
+	width: 800px;
+	align: center;
+	margin-left: auto;
+	margin-right: auto;
+	#background-color: #A0D0A0;
+}
+
+div.app-header
+{
+	#width: 800px;
+	align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img.header-image
+{
+	#align: center;
+	width: 800px;
+}
+
+div.app-navigation
+{
+	float: left;
+	width: 10em;
+	/* padding: 0.3em; */
+	height: 300px;
+}
+
+div.app-main
+{
+	margin-left: 12em;
+}
+
+
+
+div.app-navigation-global
+{
+	float: left;
+	width: 10em;
+	border: 1px;
+	margin-right: 2em;
+	padding: 0.6em;
+	background-color: #A0A0E0; 
+}
+
+div.app-navigation-global h3
+{
+	margin-top: 1.0em;
+	margin-bottom: 0em;
+}
+
+div.app-navigation-global ul
+{
+	margin-left: 0px;
+	margin-top: 0.2em;
+}
+
+div.app-navigation-global ul li
+{
+	margin-left: -1.0em;
+}
+
+div.app-navigation-global ul ul li
+{
+	margin-left: -2.0em;
+}
+
+div.app-navigation-global ul ul ul li
+{
+	margin-left: -3.0em;
+}
+
+
+#signup_content
+{
+	float: left;
+	padding-left: 49px;
+	width: 400px;
+	text-align: right;
+}
+
+#signup_content.title, #login_content.title
+{
+	font-weight: bold;
+	color: green;
+}
+
+
+.signup_field label, .login_field label
+{
+	display: block;
+	float: left;
+	margin-right: 0.5em;
+	text-align: right;
+	width: 12em;
+}
+
+
+.signup_field input, .login_field input
+{
+	text-align: left;
+}
+
+
+
+
+.signin_box
+{
+	float: left;
+	background: #cccccc;
+	border: solid 1px #f98919;
+	
+	padding-bottom: 6px;
+	padding-top: 8px;
+	padding-right: 10px;
+	margin-top: 10px;
+	text-align: right;
+	width: 250px;
+	height: 100px;
+}
+
+#signin_form
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#signin_button
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#signin_title
+{
+	padding-bottom: 5px;
+	text-align: left;
+	margin-left: 20px;
+	color: gray;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+#signin_section
+{
+	float: right;
+	margin-right: 25px;
+}
+
+.signin_field
+{
+	margin-bottom: 8px;
+	color: gray;
+}
+
+
+p
+{
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
