@@ -1,0 +1,30 @@
+<h1>View Mailbox</h1>
+
+<%= render :partial=>'common_top' %>
+
+<br/>
+
+<p>You have <%= @folders.size  %> folders.</p>
+
+<% if @folders.size > 0 %>
+  <ul>
+  <% @folders.each do |f| %>
+
+    <li>
+      <%= link_to f.name, {:action=>'folder', :id=>f.id}, :id=>"show-folder-#{f.id}" %> 
+    </li>
+
+    <% end %>
+  </ul>
+<% end %>
+
+
+<% if flash[:sent_message_id] %>
+  <p>
+  <%= link_to 'View', { :action=>'message', :id=>flash[:sent_message_id] }, :id=>"view-message-#{flash[:sent_message_id]}" %>
+  the message you just sent.</p>
+<% end  %>  
+
+<br>
+
+<%= link_to 'Send Message', {:action=>'new'}, :id=>'new-message' %>

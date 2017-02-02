@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t('AppName') %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="app">
+
+<div class="app-header">
+<%= image_tag "app-header.png", :alt=>"Header Image", :class=>'header-image' %>
+</div>
+
+
+<div class="app-navigation">
+<%= render :partial=>'layouts/global_navigation' %>
+</div>
+
+
+<div class="app-main">
+<%= yield %>
+</div>
+
+</div>
+
+</body>
+</html>

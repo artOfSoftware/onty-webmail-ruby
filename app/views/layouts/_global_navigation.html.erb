@@ -1,0 +1,43 @@
+<div class="app-navigation-global">
+
+<% if session[:user] %>
+
+  <p>Welcome, 
+  <%= Account.GetDisplayNameById( session[:user] ) %>
+  </p>
+
+  <h3><%= link_to 'Account', {controller: 'accounts', action: 'index'}, :id=>'nav-Accounts' %></li></h3>
+
+  <ul>
+    <li><%= link_to 'Password', {controller: 'accounts', action: 'password' }, :id=>'nav-Accounts-password' %></li>
+    <li><%= link_to 'Logout',   {controller: 'accounts', action: 'logout'   }, :id=>'nav-Accounts-logout'   %></li>
+    <li><%= link_to 'Users',    {controller: 'accounts', action: 'users'    }, :id=>'nav-Accounts-users'    %></li>
+  </ul>
+
+
+  <h3><%= link_to 'Mailbox', {controller: 'mailboxes', action: 'index'}, :id=>'nav-Mailboxes-index' %></h3>
+
+  <ul>
+    <li><%= link_to 'New Message', {controller: 'mailboxes', action: 'new'}, :id=>'nav-Mailboxes-new-message' %></li>
+    <li><%= link_to 'Folders', {controller: 'mailboxes', action: 'folders'}, :id =>'nav-Mailboxes-folders' %>:</li>
+    <ul>
+      <% folders = Folder.get_folders_for_account( session[:user] ) %>
+      <% folders.each do |f| %>
+        <li><%= link_to f.name, { :controller=>'mailboxes', :action=>'folder', :id=>f.id }, :id=>"nav-mailboxes-view-folder-#{f.id}" %></li>
+      <% end %>
+    </ul>
+  </ul>
+
+
+  
+<% else %>
+
+  Please 
+  <%= link_to 'login', {:controller=>'accounts', :action=>'login'}, :id=>'nav-Login' %>
+  or 
+  <%= link_to 'create an account', {:controller=>'accounts', :action=>'signup'}, :id=>'nav-Signup' %>.
+    
+<% end %>
+
+</div>
+

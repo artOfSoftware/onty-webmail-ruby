@@ -1,0 +1,43 @@
+<h1>View Mailbox: Folder <b><%= @folder.name %></b></h1>
+
+<%= render :partial=>'common_top' %>
+
+<br/>
+
+<% if @messages.nil? %>
+
+  @messages is nil, cannot process (this should never happen).
+
+<% else %>
+
+  <table border="2">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Subject</th>
+        <th>Status</th>
+        <th>Commands</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @messages.each do |m| %>
+        <tr>
+          <td><%= link_to Account.GetDisplayNameById( m.from_id ), { :controller=>'accounts', :action=>'user', :id=>m.from_id }, :id=>"accounts-user-#{m.from_id}" %></td>
+          <td><%= link_to Account.GetDisplayNameById( m.to_id   ), { :controller=>'accounts', :action=>'user', :id=>m.to_id   }, :id=>"accounts-user-#{m.to_id}" %></td>
+          <td><%= m.subject %></td>
+          <td><%= MessageStatus.GetStatusNameById(m.status) %></td>
+          <td>
+            <%= link_to 'Read', {:action=>'message', :id=>m.id}, :id=>"show-message-#{m.id}" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
+
+<br>
+
+<%= link_to 'Send Message', {:action=>'new'}, :id=>'new-message' %>

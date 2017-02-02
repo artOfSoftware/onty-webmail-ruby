@@ -1,0 +1,93 @@
+<h1>Mailbox: Debug</h1>
+
+
+<h2>Params</h2>
+<p>Size is 
+<%= params.size %>
+</p>
+
+<table border="1">
+<tr>
+  <th>Key</th>
+  <th>Value</th>
+</tr>
+<% params.each do |c| %>
+  <tr>
+  <td><%= c[0] %>
+  <td><%= c[1] %>
+  </tr>
+<% end %>
+</table>
+
+
+<h2>Assigns</h2>
+<p>Size is 
+<%= assigns.size %>
+</p>
+
+<table border="1">
+<tr>
+  <th>Key</th>
+  <th>Value</th>
+</tr>
+<% assigns.each do |c| %>
+  <tr>
+  <td><%= c[0] %>
+  <td><%= c[1] %>
+  </tr>
+<% end %>
+</table>
+
+
+<h2>Cookies</h2>
+<%#= cookies.size %>
+
+<table border="1" width="600">
+<tr>
+  <th>Key</th>
+  <th>Value</th>
+</tr>
+<% cookies.each do |c| %>
+  <tr>
+  <td><%= c[0] %>
+  <td><%= c[1] %>
+  </tr>
+<% end %>
+</table>
+
+
+<h2>Flash</h2>
+<%#= flash.size %>
+
+<table border="1">
+<tr>
+  <th>Key</th>
+  <th>Value</th>
+</tr>
+<% flash.each do |c| %>
+  <tr>
+  <td><%= c[0] %>
+  <td><%= c[1] %>
+  </tr>
+<% end %>
+</table>
+
+
+<h2>Session</h2>
+<%#= session.size %>
+
+<table border=1>
+<tr>
+  <th>Key</th>
+  <th>Value</th>
+</tr>
+<tr>
+  <td>session[:current_user_id]</td>
+  <td><%= session[:current_user_id] %>
+</tr>
+</table>
+
+
+<br>
+
+<%= link_to 'back to Index', {:action=>'index'}, :id=>'index' %>

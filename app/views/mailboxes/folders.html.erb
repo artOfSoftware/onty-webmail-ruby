@@ -1,0 +1,60 @@
+<h1>View Folders</h1>
+
+<%= render :partial=>'common_top' %>
+
+<br/>
+
+<p>You have <%= @folders_system.size + @folders_custom.size  %> folders.</p>
+
+<table border="2">
+
+<tr>
+  <td>Folder Name</td>
+  <td>Type</td>
+  <td>Stats</td>
+  <td>Actions</td>
+</tr>
+
+<% @folders_system.each do |f| %>
+
+<tr>
+  <td><%= link_to f.name, {:action=>'folder', :id=>f.id}, :id=>"show-folder-#{f.id}" %></td>
+  <td><%= f.account_id==0 ? "System" : "Custom" %></td>
+  <td>
+    (<%= MailboxesHelper.GetNrMessagesInFolder( session[:user], f.id ) %>
+    messages, 
+    <%= MailboxesHelper.GetNrMessagesInFolder( session[:user], f.id, :unread ) %>
+    unread) 
+  </td>
+  <td></td>
+</tr>
+
+<% end %>
+
+<% @folders_custom.each do |f| %>
+
+<tr>
+  <td><%= link_to f.name, {:action=>'folder', :id=>f.id}, :id=>"show-folder-#{f.id}" %></td>
+  <td><%= f.account_id==0 ? "System" : "Custom" %></td>
+  <td>
+    (<%= MailboxesHelper.GetNrMessagesInFolder( session[:user], f.id ) %>
+    messages, 
+    <%= MailboxesHelper.GetNrMessagesInFolder( session[:user], f.id, :unread ) %>
+    unread) 
+  </td>
+  <td>
+    <%= link_to 'Edit Folder', { :action=>'editfolder', :id=>f.id }, :id=>"edit-folder-#{f.id}" %>
+    
+  </td>
+</tr>
+
+<% end %>
+
+</table>
+
+<%= link_to 'Create a New Custom Folder', { :action=>'newfolder' }, :id=>"create-folder" %>
+
+
+<br>
+
+<%= link_to 'Send Message', {:action=>'new'}, :id=>'new-message' %>
