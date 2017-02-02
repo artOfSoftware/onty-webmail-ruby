@@ -1,0 +1,20 @@
+<% if flash[:notice] %>
+  <div class="notice" id="flash-notice">Notice: <%= flash[:notice] %></div>
+<% end %>
+
+<% if flash[:error] %>
+  <div class="error" id="flash-error">Error: <%= flash[:error] %></div>
+<% end %>
+
+<% if flash[:debug] %>
+  <div class="debug" id="flash-debug">Debug: <%= flash[:debug] %></div>
+<% end %>
+
+<% if flash[:test] %>
+  <div class="debug" id="flash-test">Test: <%= flash[:test] %></div>
+<% end %>
+
+<% if flash[:notice] || flash[:error] || flash[:debug] || flash[:test] %>
+  <br/>
+<% end %>
+

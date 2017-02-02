@@ -1,0 +1,34 @@
+<% if @folder.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@folder.errors.count, "error") %> prohibited this folder from being saved:</h2>
+
+    <ul>
+    <% @folder.errors.full_messages.each do |err| %>
+      <li><%= err %></li>
+    <% end %>
+    </ul>
+
+  </div>
+<% end %>
+
+
+
+
+<%= form_for @folder, url: { action: form_ac } do |f| %>
+
+  <table>
+    <tr>
+      <td class="form"><%= f.label :name %></td>
+      <td><%= f.text_field :name, size: 34 %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+<% end %>

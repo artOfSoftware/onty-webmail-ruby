@@ -1,0 +1,46 @@
+<% if @message.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@mailbox.errors.count, "error") %> prohibited this mailbox from being saved:</h2>
+
+    <ul>
+    <% @message.errors.full_messages.each do |err| %>
+      <li><%= err %></li>
+    <% end %>
+    </ul>
+
+  </div>
+<% end %>
+
+
+
+
+<%= form_for @message, url: { action: form_ac } do |f| %>
+
+  <table>
+    <tr>
+      <td class="form"><%= f.label :from_id %></td>
+      <td><%= Account.GetDisplayNameById( session[:user] ) %></td>
+    </tr>
+    <tr>
+      <td class="form"><%= f.label :to_id %></td>
+      <td><%= f.collection_select :to_id, @accounts, :id, :GetDisplayName %></td>
+    </tr>
+    <tr>
+      <td class="form"><%= f.label :subject %></td>
+      <td><%= f.text_field :subject, size: 40 %></td>
+    </tr>
+    <tr>
+      <td class="form"><%= f.label :text %></td>
+      <td><%= f.text_area :text, cols:40, rows:4 %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <div class="actions">
+          <%= f.submit :id=>'send' %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+<% end %>

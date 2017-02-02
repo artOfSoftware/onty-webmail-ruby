@@ -1,0 +1,38 @@
+<h1>View Mailbox: Inbox Messages</h1>
+
+<p id="notice"><%= notice %></p>
+
+<% if @messages.nil? %>
+  @messages is nil
+<% else %>
+  <table border="2">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Subject</th>
+        <th>Text</th>
+        <th>Status</th>
+        <th>Commands</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @messages.each do |m| %>
+        <tr>
+          <td><%= Account.GetDisplayNameById( m.from_id ) %></td>
+          <td><%= Account.GetDisplayNameById( m.to_id ) %></td>
+          <td><%= m.subject %></td>
+          <td><%= m.text %></td>
+          <td><%= MessageStatus.GetStatusNameById(m.status) %></td>
+          <td><%= link_to 'Show', :action=>'show', :id=>"show_#{m.id}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
+
+<br>
+
+<%= link_to 'Send Message', {:action=>'new'}, :id=>'send-message' %>

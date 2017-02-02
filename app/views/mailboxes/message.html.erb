@@ -1,0 +1,55 @@
+<h1>View a Message</h1>
+
+<%= render :partial=>'common_top' %>
+
+<br/>
+
+<table border="2">
+  <tbody>
+    <tr>
+      <td>Message ID</td>
+      <td><%= @message.id %></td>
+    </tr>
+    <tr>
+      <td>In Folder</td>
+      <% f = Folder.find( @message.folder_id ) %>
+      <td><%= link_to f.name, { :action=>'folder', :id=>f.id }, :id=>"folder-#{f.id}" %></td>
+    </tr>
+    <tr>
+      <td>From</td>
+      <td><%= link_to Account.GetDisplayNameById( @message.from_id ), { :controller=>'accounts', :action=>'user', :id=>@message.from_id }, :id=>"accounts-user-#{@message.from_id}" %></td>
+    </tr>
+    <tr>
+      <td>To</td>
+      <td><%= link_to Account.GetDisplayNameById( @message.to_id ), { :controller=>'accounts', :action=>'user', :id=>@message.to_id }, :id=>"accounts-user-#{@message.to_id}" %></td>
+    </tr>
+    <tr>
+      <td>Subject</td>
+      <td><%= @message.subject %></td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td><%= MessageStatus.GetStatusNameById( @message.status ) %></td>
+    </tr>
+    <tr>
+      <td>Text</td>
+      <td><%= @message.text %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+<%= form_for @message, url: { action: 'movemessage' } do |f| %>
+  <p>Move to
+  <%= f.collection_select :folder_id, @folders, :id, :name %>
+  <%= f.submit 'Move message' %>
+  </p>
+<% end %>
+
+<p></p>
+
+<p>
+  <%= link_to 'Back to Index', {:action=>'index'}, :id=>'index' %>
+</p>
+
