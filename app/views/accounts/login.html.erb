@@ -1,0 +1,20 @@
+<h1>Account Login</h1>
+
+<%= render :partial=>'common_top' %>
+
+
+<% if ! session[:user] %>
+
+  <p>User is not logged in.</p>
+  <%= render :partial=>'login' %>
+
+  <p><%= link_to 'Create an Account', {:action=>'signup'}, :id=>'signup' %></p>
+
+<% else %>
+
+  User is already logged in.
+  <p>This should not happen! Should redirect to home page.</p>
+
+
+<% end %>
+

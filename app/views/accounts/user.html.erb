@@ -1,0 +1,50 @@
+<h1>View a User Account</h1>
+
+<%= render :partial=>'common_top' %>
+
+<br/>
+
+<% if ! session[:user] %>
+
+  User is not logged in.
+
+  <p>This should not happen!</p>
+  
+<% else %>
+
+  <% if @account %>
+    <p>Information for another user:</p>
+    <br/>
+    
+    <table border="2">
+    <tr>
+      <td>User ID:</td> 
+      <td><%= @account.id %>
+    </tr>
+    <tr>
+      <td>User name:</td> 
+      <td><%= @account.name %>
+    </tr>
+    <tr>
+      <td>E-mail:</td> 
+      <td><%= @account.email %>
+    </tr>
+    <tr>
+      <td>Number of logins:</td> 
+      <td><%= @account.nr_logins %>
+    </tr>
+    <tr>
+      <td>Account created:</td> 
+      <td><%= @account.created_at %>
+    </tr>
+    <tr>
+      <td>Account updated:</td> 
+      <td><%= @account.updated_at %>
+    </tr>
+  </table>
+      
+  <% end %>
+  
+<% end %>
+
+

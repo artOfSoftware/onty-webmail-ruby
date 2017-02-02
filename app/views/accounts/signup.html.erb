@@ -1,0 +1,61 @@
+<h1>Account Signup</h1>
+
+<%= render :partial=>'common_top' %>
+
+
+
+<% if session[:user] %>
+  
+  <p>You are already logged in. Please 
+  <%= link_to 'logout', {:action=>'logout'}, :id=>'logout' %>
+  first before making a new account.</p>
+
+<% else %>
+
+  <div id="signup_content">
+  
+  <span class="title">Sign-up for a Mail System Account</span>
+  <br/>
+  
+  <%= form_tag  do %>
+  
+    <div class="signup_field">
+      <label for="user_name">User Name:</label>
+      <%= text_field :signup, :name %>
+      <br/>
+    </div>
+  
+    <div class="signup_field">
+      <label for="user_fullname">Full Name:</label>
+      <%= text_field :signup, :fullname %>
+      <br/>
+    </div>
+  
+    <div class="signup_field">
+      <label for="user_email">E-Mail:</label>
+      <%= text_field :signup, :email %>
+      <br/>
+    </div>
+  
+    <div class="signup_field">
+      <label for="user_password">Password:</label>
+      <%= password_field :signup, :password %>
+      <br/>
+    </div>
+
+    <div class="signup_field">
+      <label for="user_password_confirmation">Password Again:</label>
+      <%= password_field :signup, :password_confirmation %>
+      <br/>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Signup", :id=>'signup' %>
+    </div>
+
+  <% end %>
+
+  <div>
+
+<% end %>
+

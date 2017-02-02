@@ -1,0 +1,22 @@
+<h1>Listing of Users</h1>
+
+<%= render :partial=>'common_top' %>
+
+
+<% if ! session[:user] %>
+
+  User is not logged in.
+
+  <p>This should not happen!</p>
+  
+<% else %>
+
+  <ul>
+  <% @accounts.each do |a| %>
+
+    <li><%= link_to a.name, { :action=>'user', :id=>a.id }, :id=>"show-account-#{a.id}" %></li>
+
+  <% end %>
+  </ul>
+  
+<% end %>

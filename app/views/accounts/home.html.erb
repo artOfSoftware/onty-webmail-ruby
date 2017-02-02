@@ -1,0 +1,27 @@
+<h1>Account Home</h1>
+
+<%= render :partial=>'common_top' %>
+
+
+<% if ! session[:user] %>
+
+  User is not logged in.
+
+  <p>This should not happen!</p>
+  
+<% else %>
+
+  <p>You are currently logged in.</p>
+  <br/>
+  <p>Your information:</p>
+  <ul>
+    <li><p>User name: <%= @account.name %></li>
+    <li><p>E-mail: <%= @account.email %></li>
+    <li><p>Number of logins: <%= @account.nr_logins %></li>
+    <li><p>Account created: <%= @account.created_at %></li>
+  </ul>
+    
+  <br/>
+  <%= link_to 'Logout', {:action=>'logout'}, :id=>'logout' %>
+
+<% end %>
