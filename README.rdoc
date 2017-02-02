@@ -1,0 +1,36 @@
+== README
+
+This is a very simple webmail system. I mainly wrote to learn Ruby on Rails.
+But nowadays I use it to practice test automation (in separate repository).
+
+Things you may want to cover:
+
+* Ruby 2.3
+
+* System dependencies: TBD
+
+* Configuration: TBD
+
+* Database creation: TBD
+
+* Database initialization: TBD
+
+* How to run the test suite
+
+While in the main directory, run
+``rake``
+
+* Services (job queues, cache servers, search engines, etc.)
+
+None
+
+* Deployment instructions
+
+On a Linux system, copy all files in a local directory. 
+Then run:
+``./_run``
+
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
