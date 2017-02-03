@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version=>6871007) do
 
-  create_table "account_secrets", :force=>:cascade do |t|
+  create_table "account_secrets"  do |t|
     t.integer  "account_id",    :null=>false
     t.string   "account_name",  :null=>false
     t.string   "password_hash", :null=>false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version=>6871007) do
   #add_index "account_secrets", ["account_id"], name: "sqlite_autoindex_account_secrets_1", unique: true
   #add_index "account_secrets", ["account_name"], name: "sqlite_autoindex_account_secrets_2", unique: true
 
-  create_table "accounts", :force=>:cascade do |t|
+  create_table "accounts" do |t|
     t.string   "name",                   :null=>false
     t.string   "fullname",               :null=>false
     t.string   "email",                  :null=>false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version=>6871007) do
 
   #add_index "accounts", ["name"], name: "sqlite_autoindex_accounts_1", unique: true
 
-  create_table "folders", force=>:cascade do |t|
+  create_table "folders" do |t|
     t.integer  "account_id",              :null=>false
     t.string   "name",                    :null=>false
     t.integer  "folder_type", :default=>0, :null=>false
@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(:version=>6871007) do
     t.datetime "updated_at",              :null=>false
   end
 
-  create_table "message_statuses", force=>:cascade do |t|
+  create_table "message_statuses" do |t|
     t.string   "name",       :null=>false
     t.datetime "created_at", :null=>false
     t.datetime "updated_at", :null=>false
   end
 
-  create_table "messages", force=>:cascade do |t|
+  create_table "messages" do |t|
     t.integer  "account_id"
     t.integer  "folder_id"
     t.integer  "from_id",                :null=>false

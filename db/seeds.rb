@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+message_statuses = MessageStatus.create([ 
+	{ id: 0, name: 'Unread' },
+	{ id: 1, name: 'Read' }
+	])
+
+folders = Folder.create( [
+	{ account_id:0, name: 'Inbox',    folder_type:1 },
+	{ account_id:0, name: 'Sent',     folder_type:2 },
+	{ account_id:0, name: 'Archived', folder_type:3 }
+	] )
+
