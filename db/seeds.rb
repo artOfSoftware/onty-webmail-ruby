@@ -8,7 +8,7 @@
 
 message_statuses = MessageStatus.create([ 
 	{ id: 0, name: 'Unread' },
-	{ id: 1, name: 'Read' }
+	{        name: 'Read' }
 	])
 
 folders = Folder.create( [
