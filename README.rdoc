@@ -21,8 +21,9 @@ I have written an automated Selenium suite for the Simple Webmail application: h
 
 
 === Deployment instructions
-# On a Linux system, copy all files in a local directory. Change into that directory.
-# Run <tt>rake db:setup</tt>. this will create and populate the database.
-# Then edit file <tt>_run</tt> and change IP address to the public IP address of the machine on which you are running it.
-# Then run: <tt>./_run</tt>
+1. On a Linux system, copy all files in a local directory. Change into that directory.
+1. Run <tt>bundle</tt> to make sure all the necessary gems get installed.
+1. Run <tt>rake db:setup</tt>. This will create and populate the database.
+1. Then edit file <tt>_run</tt> and change IP address to the public IP address of the machine on which you are running it.
+1. Then run: <tt>./_run</tt>
 
