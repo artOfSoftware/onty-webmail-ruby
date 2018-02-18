@@ -2,4 +2,4 @@
 
 set -x
 
-rails server -b 192.168.1.102
+rails server -b 192.168.2.106
