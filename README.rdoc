@@ -1,9 +1,9 @@
 == README
 
 This is a very simple webmail system. I mainly wrote to learn Ruby on Rails, and the project is not intended for production use.
-Nowadays I use it to practice {test automation}[https://github.com/ontytoom/Onty.SeleniumTest.Webmail].
+Nowadays I use it to practice test automation (see links later in this doc).
 
-This application has been {deployed to Heroku where you can play with it}[http://onty-webmail-ruby.herokuapp.com].
+This application has been {deployed to Heroku where you can play with it}[http://onty-webmail-ruby.herokuapp.com] .
 
 === Requirements
 * Any OS where Ruby on Rails can run (such as Linux or Windows)
@@ -14,10 +14,12 @@ This application has been {deployed to Heroku where you can play with it}[http:/
 === Running the tests
 ==== Unit tests using Ruby
 While in the main directory, run <tt>rake test</tt>. 
-Currently {one unit test fails}[https://github.com/ontytoom/onty-webmail-ruby/issues/3].
+Currently {one unit test fails}[https://github.com/artOfSoftware/onty-webmail-ruby/issues/3].
 
 ==== Automated Selenium tests
-I have written an automated Selenium suite for the Simple Webmail application: https://github.com/ontytoom/Onty.SeleniumTest.Webmail
+I have written a couple of automated Selenium suites for the Simple Webmail application:
+* Java (with Cucumber): https://github.com/artOfSoftware/onty-webmail-seleniumTest-java.git
+* C#:   https://github.com/artOfSoftware/onty-webmail-seleniumTest-dotnet.git
 
 
 === Deployment instructions
