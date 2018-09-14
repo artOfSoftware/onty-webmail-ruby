@@ -9,23 +9,28 @@
 </head>
 <body>
 
-<div class="app">
 
-<div class="app-header">
-<%= image_tag "app-header.png", :alt=>"Header Image", :class=>'header-image' %>
+<div id="app" class="app">
+
+  <div id="app-header" class="app-header">
+    <a href="/">
+      <%= image_tag "app-header.png", :alt=>"Header Image", :class=>'header-image' %>
+    </a>
+  </div>
+
+
+  <div id="app-navigation" class="app-navigation">
+   <%= render :partial=>'layouts/global_navigation' %>
+  </div>
+
+
+  <div id="app-main" class="app-main">
+    <%= yield %>
+  </div>
+
 </div>
 
-
-<div class="app-navigation">
-<%= render :partial=>'layouts/global_navigation' %>
-</div>
-
-
-<div class="app-main">
-<%= yield %>
-</div>
-
-</div>
+<%= render :partial=>'layouts/global_footer' %>
 
 </body>
 </html>
