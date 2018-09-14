@@ -29,3 +29,11 @@ I have written a couple of automated Selenium suites for the Simple Webmail appl
 1. Then edit file <tt>_run</tt> and change IP address to the public IP address of the machine on which you are running it.
 1. Then run: <tt>./_run</tt>
 
+=== Questions or comments?
+
+Found any issues?
+Feel free to
+{log them}[https://github.com/artOfSoftware/onty-webmail-ruby/issues]
+or contact me at onTy@artOfSoftware.io
+
+
