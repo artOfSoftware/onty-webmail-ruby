@@ -8,8 +8,8 @@ This application has been {deployed to Heroku where you can play with it}[http:/
 === Requirements
 * Any OS where Ruby on Rails can run (such as Linux or Windows)
 * Ruby 2.3
-* Rails 4.2.6
-* PostgreSQL 9.5
+* Rails 5.2.1
+* PostgreSQL 9.6
 
 === Running the tests
 ==== Unit tests using Ruby
